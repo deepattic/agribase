@@ -8,10 +8,10 @@
 	let {
 		ref = $bindable(null),
 		collapsible = "icon",
-		data,
+		navItems,
 		navdata,
 		...restProps
-	}: ComponentProps<typeof Sidebar.Root> & { data: any } = $props();
+	}: ComponentProps<typeof Sidebar.Root> & { navItems: any; navdata: any } = $props();
 	
 </script>
 
@@ -37,7 +37,7 @@
 		</Sidebar.Menu>
 	</Sidebar.Header>
 	<Sidebar.Content>
-		<NavMain items={data.navMain} />
+		<NavMain items={navItems} />
 	</Sidebar.Content>
 	<Sidebar.Footer>
 		<NavUser user={navdata} />

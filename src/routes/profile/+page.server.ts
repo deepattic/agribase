@@ -1,5 +1,6 @@
 import type {Actions, PageServerLoad } from "./$types";
-import { error } from "@sveltejs/kit";
+import { error, redirect } from "@sveltejs/kit";
+import { handleLoginRedirect } from '$lib/utils';
  
 function removeEmptyFields(formData: FormData): FormData {
     const newFormData = new FormData();
@@ -19,11 +20,21 @@ function removeEmptyFields(formData: FormData): FormData {
     return newFormData;
 }
 
+export const load: PageServerLoad = async ({ locals, url }) => {
+	if (!locals.pb.authStore.isValid) {
+		throw redirect(303, handleLoginRedirect(url));
+	}
+
+}
+
 export const actions = {
 	updateProfile: async ({ request, locals }) => {
 		let formData = await request.formData();
 		formData = removeEmptyFields(formData)
-		console.log(formData)
+
+		if (!locals.pb.authStore.record) {
+			throw error(400, { message: "You must be logged in to update your profile" });
+		}
 
 		try {
 			await locals.pb.collection('users').update(locals.pb.authStore.record.id, formData);

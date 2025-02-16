@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import { navItems } from "$lib/data";
 
 	let {
 		items,
@@ -7,18 +8,17 @@
 		items: {
 			title: string;
 			url: string;
-			// this should be `Component` after lucide-svelte updates types
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			icon?: any;
-			isActive?: boolean;
+			icon: any;
+			isActive: boolean;
 		}[];
 	} = $props();
+	let activeItem = $state(navItems[0]);
 </script>
 <Sidebar.Group class="group-data-[collapsible=icon]">
 <Sidebar.Menu>
 	{#each items as item (item.title)}
 		<Sidebar.MenuItem>
-			<Sidebar.MenuButton isActive={item.isActive}>
+			<Sidebar.MenuButton onclick={() => {activeItem = item;}} isActive={activeItem.title === item.title}>
 				{#snippet child({ props })}
 					<a href={item.url} {...props}>
 						<item.icon />

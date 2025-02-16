@@ -17,7 +17,6 @@
             const response = await fetch('/logout', {
                 method: 'POST'
             });
-
             if (response.redirected) {
                 window.location.href = response.url; // Redirect to the login page
             }
@@ -81,7 +80,14 @@
 					</DropdownMenu.Item>
 				</DropdownMenu.Group>
 				<DropdownMenu.Separator />
-				<DropdownMenu.Item onSelect={handleLogout}>
+				<DropdownMenu.Item onSelect={() => {
+					const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = '/logout';
+  document.body.appendChild(form);
+  form.submit();
+  form.remove();
+				} }>
 					<LogOut />
 					Log out
 				</DropdownMenu.Item>
