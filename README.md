@@ -8,8 +8,8 @@
 - [x] Agents should be able to register new farmers with basic details.
 - [x] Agents should be able to update farmer profiles including contact information.
 - [x] Agents should be able to archive/deactivate farmer profiles when needed.
-- [] Agents should be able to add new storage facilities with location details.
-- [] Agents should be able to track storage capacity and current utilization.
+- [x] Agents should be able to add new storage facilities with location details.
+- [x] Agents should be able to track storage capacity and current utilization.
 - [] Agents should be able to generate storage allocation reports.
 - [] Agents should be able to track inventory movement in/out of storage.
 - [] Agents should be able to record fertilizer distribution details.
@@ -22,7 +22,7 @@
 - [] System should alert about unusual patterns in crop data.
 - [] System should send notifications to admins for pending agent verifications.
 - [] Users should be able to export reports in PDF format.
-- [] System should validate all input data against predefined rules.
+- [x] System should validate all input data against predefined rules.
 - [] Users should be able to view statistical dashboards and analytics
 # sv
 

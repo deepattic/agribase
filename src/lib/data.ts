@@ -18,7 +18,7 @@ export const navItems = [
     },
     {
         title: 'Storage',
-        url: '/stroe',
+        url: '/storage',
         icon: Store,
         isActive: false,
     },
