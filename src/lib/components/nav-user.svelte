@@ -11,19 +11,6 @@
 
 	let { user  }: { user: { name: string; email: string; avatar: string } } = $props();
 	const sidebar = useSidebar();
-
-	const handleLogout = async () => {
-		try {
-            const response = await fetch('/logout', {
-                method: 'POST'
-            });
-            if (response.redirected) {
-                window.location.href = response.url; // Redirect to the login page
-            }
-        } catch (error) {
-            console.error('Logout failed:', error);
-        }
-	}
 </script>
 
 <Sidebar.Menu>
