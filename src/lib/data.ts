@@ -1,7 +1,8 @@
 import BookOpen from 'lucide-svelte/icons/book-open';
-import Bot from 'lucide-svelte/icons/bot';
 import Settings2 from 'lucide-svelte/icons/settings-2';
 import LayoutDashboard from 'lucide-svelte/icons/layout-dashboard';
+import  PersonStanding  from 'lucide-svelte/icons/person-standing';
+import { Store } from 'lucide-svelte';
 export const navItems = [
     {
         title: 'Dashbord',
@@ -10,15 +11,15 @@ export const navItems = [
         isActive: true
     },
     {
-        title: 'Models',
-        url: '#',
-        icon: Bot,
+        title: 'Farmers',
+        url: '/farmers',
+        icon: PersonStanding,
         isActive: false,
     },
     {
-        title: 'Documentation',
-        url: '#',
-        icon: BookOpen,
+        title: 'Storage',
+        url: '/stroe',
+        icon: Store,
         isActive: false,
     },
     {
