@@ -11,14 +11,14 @@
 - [x] Agents should be able to add new storage facilities with location details.
 - [x] Agents should be able to track storage capacity and current utilization.
 - [] Agents should be able to generate storage allocation reports.
-- [] Agents should be able to track inventory movement in/out of storage.
-- [] Agents should be able to record fertilizer distribution details.
-- [] Agents should be able to track subsidy allocation and distribution.
-- [] Agents should be able to verify farmer eligibility for subsidies.
-- [] Agents should be able to generate subsidy distribution reports.
-- [] Agents should be able to maintain records of fertilizer stock levels.
-- [] System should send alerts for low storage capacity.
-- [] System should notify about upcoming subsidy distribution dates.
+- [X] Agents should be able to track inventory movement in/out of storage.
+- [X] Agents should be able to record fertilizer distribution details.
+- [X] Agents should be able to track subsidy allocation and distribution.
+- [X] Agents should be able to verify farmer eligibility for subsidies.
+- [X] Agents should be able to generate subsidy distribution reports.
+- [X] Agents should be able to maintain records of fertilizer stock levels.
+- [X] System should send alerts for low storage capacity.
+- [X] System should notify about upcoming subsidy distribution dates.
 - [] System should alert about unusual patterns in crop data.
 - [] System should send notifications to admins for pending agent verifications.
 - [] Users should be able to export reports in PDF format.

@@ -23,6 +23,12 @@ export const navItems = [
         isActive: false,
     },
     {
+        title: 'Subsidies',
+        url: '/subsidies',
+        icon: BookOpen,
+        isActive: false,
+    },
+    {
         title: 'Settings',
         url: '/profile',
         icon: Settings2,

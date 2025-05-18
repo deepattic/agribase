@@ -5,6 +5,7 @@
 	import { goto } from '$app/navigation';
 	import * as Table from '$lib/components/ui/table/index.js';
 	let { data }: { data: PageData } = $props();
+	$inspect(data.storage)
 </script>
 
 <div class="container mx-auto py-6">
@@ -48,8 +49,8 @@
 								<Warehouse size="2rem" />
 							</div></Table.Cell
 						>
-						<Table.Cell>s.district</Table.Cell>
-						<Table.Cell>s.location</Table.Cell>
+						<Table.Cell>{s.district}</Table.Cell>
+						<Table.Cell>{s.location}</Table.Cell>
 						<Table.Cell class="text-right">{s.capacity}</Table.Cell>
 						<Table.Cell class="text-right"
 							>{Math.floor((s.current_utilization / s.capacity) * 100)}%</Table.Cell
