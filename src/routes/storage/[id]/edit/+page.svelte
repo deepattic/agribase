@@ -8,6 +8,7 @@
 	import * as Select from '$lib/components/ui/select/index.js';
 	import * as Progress from '$lib/components/ui/progress/index.js';
 	import { AlertCircle } from 'lucide-svelte';
+	import { Toaster, toast } from 'svelte-sonner';
 
 	let { data } = $props();
 	let loading = $state(false);
@@ -28,6 +29,18 @@
 	}
 
 	const submitUpdateStorage = () => {
+		// Check if utilization exceeds capacity before allowing submission
+		if (utilization > capacity) {
+			toast.error("Cannot save! Utilization exceeds capacity.", {
+				description: "Please reduce utilization or increase capacity before saving.",
+				duration: 5000
+			});
+			return ({ cancel }) => {
+				// Cancel the form submission
+				cancel();
+			};
+		}
+		
 		loading = true;
 		return async ({ result }: { result: any }) => {
 			switch (result.type) {
@@ -78,6 +91,7 @@
 </script>
 
 <div class="container mx-auto py-6 lg:rounded-lg">
+	<Toaster richColors />
 	<div class="bg-card shadow-lg rounded-xl overflow-hidden">
 		<div class="bg-primary/10 p-6 border-b">
 			<h2 class="text-2xl font-semibold flex items-center gap-2">

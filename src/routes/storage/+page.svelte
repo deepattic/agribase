@@ -25,11 +25,11 @@
 			: data.storage
 	);
 	
-	function handleEdit(id) {
+	function handleEdit(id: string) {
 		goto(`/storage/${id}/edit`);
 	}
 	
-	function handleDelete(id) {
+	function handleDelete(id: any) {
 		storageToDelete = id;
 		isDeleteDialogOpen = true;
 	}
